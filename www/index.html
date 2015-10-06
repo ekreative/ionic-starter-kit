@@ -15,16 +15,20 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="js/helpers/angular-ios9-uiwebview.patch.js"></script>
+    <script src="modules/helpers/angular-ios9-uiwebview.patch.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+    <script src="modules/main/app.js"></script>
+    <script src="modules/main/js/constants.js"></script>
+    <script src="modules/main/js/router.js"></script>
+    <script src="modules/main/js/services.js"></script>
+
+    <script src="modules/tabs/js/controllers.js"></script>
+    <script src="modules/tabs/js/service.js"></script>
   </head>
   <body ng-app="starter">
     <!--
