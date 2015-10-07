@@ -4,6 +4,7 @@ var gulp      = require('gulp'),
     concat    = require('gulp-concat'),
     sass      = require('gulp-sass'),
     minifyCss = require('gulp-minify-css'),
+    imagemin  = require('gulp-imagemin'),
     rename    = require('gulp-rename'),
     sh        = require('shelljs');
 
@@ -22,6 +23,15 @@ gulp.task('sass', function(done) {
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
     .on('end', done);
+});
+
+gulp.task('images', function () {
+  return gulp.src(['./assets/images/*'])
+    .pipe(imagemin({
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest('./www/img/'));
 });
 
 gulp.task('watch', function() {

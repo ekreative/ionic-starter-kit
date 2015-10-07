@@ -6,5 +6,6 @@ node_modules/
 platforms/
 plugins/
 resources/
+www/img/
 www/lib/
 www/css/
