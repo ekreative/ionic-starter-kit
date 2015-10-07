@@ -21,7 +21,7 @@ angular.module('starter')
                 views: {
                     'tab-dash': {
                         templateUrl: 'modules/tabs/views/tab-dash.html',
-                        controller: 'DashCtrl'
+                        controller: 'DashCtrl as Dash'
                     }
                 }
             })
@@ -31,7 +31,7 @@ angular.module('starter')
                 views: {
                     'tab-chats': {
                         templateUrl: 'modules/tabs/views/tab-chats.html',
-                        controller: 'ChatsCtrl'
+                        controller: 'ChatsCtrl as Chats'
                     }
                 }
             })
@@ -40,7 +40,7 @@ angular.module('starter')
                 views: {
                     'tab-chats': {
                         templateUrl: 'modules/tabs/views/chat-detail.html',
-                        controller: 'ChatDetailCtrl'
+                        controller: 'ChatDetailCtrl as ChatDetail'
                     }
                 }
             })
@@ -50,7 +50,7 @@ angular.module('starter')
                 views: {
                     'tab-account': {
                         templateUrl: 'modules/tabs/views/tab-account.html',
-                        controller: 'AccountCtrl'
+                        controller: 'AccountCtrl as Account'
                     }
                 }
             });
