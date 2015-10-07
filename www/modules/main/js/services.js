@@ -71,7 +71,6 @@ angular.module('starter')
                     'ios': {'alert': 'true', 'badge': 'true', 'sound': 'true'}, 'windows': {} } );
 
                 push.on('registration', function(data) {
-                    console.log(data.registrationId);
                     // data.registrationId
                 });
 
