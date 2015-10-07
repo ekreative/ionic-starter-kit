@@ -1,27 +1,20 @@
 angular.module('starter')
 
-    .controller('DashCtrl', function($scope) {})
+    .controller('DashCtrl', function() {})
 
-    .controller('ChatsCtrl', function($scope, Chats) {
-        // With the new view caching in Ionic, Controllers are only called
-        // when they are recreated or on app start, instead of every page change.
-        // To listen for when this page is active (for example, to refresh data),
-        // listen for the $ionicView.enter event:
-        //
-        //$scope.$on('$ionicView.enter', function(e) {
-        //});
-        $scope.chats = Chats.all();
-        $scope.remove = function(chat) {
+    .controller('ChatsCtrl', function(Chats) {
+        this.chats = Chats.all();
+        this.remove = function(chat) {
             Chats.remove(chat);
         };
     })
 
-    .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-        $scope.chat = Chats.get($stateParams.chatId);
+    .controller('ChatDetailCtrl', function($stateParams, Chats) {
+        this.chat = Chats.get($stateParams.chatId);
     })
 
-    .controller('AccountCtrl', function($scope) {
-        $scope.settings = {
+    .controller('AccountCtrl', function() {
+        this.settings = {
             enableFriends: true
         };
     });
