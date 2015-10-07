@@ -1,11 +1,11 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
-var sh = require('shelljs');
+var gulp      = require('gulp'),
+    gutil     = require('gulp-util'),
+    bower     = require('bower'),
+    concat    = require('gulp-concat'),
+    sass      = require('gulp-sass'),
+    minifyCss = require('gulp-minify-css'),
+    rename    = require('gulp-rename'),
+    sh        = require('shelljs');
 
 
 gulp.task('default', ['sass']);

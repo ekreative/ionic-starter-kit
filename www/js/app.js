@@ -8,7 +8,9 @@ angular.module('starter', [
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
-        Pushes.run('12345678900');//senderID for push notifications
+        if (window.cordova) {
+            Pushes.run('12345678900');//senderID for push notifications
+        }
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             cordova.plugins.Keyboard.disableScroll(true);
