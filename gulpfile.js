@@ -9,7 +9,7 @@ var gulp      = require('gulp'),
     sh        = require('shelljs');
 
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'images']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -26,7 +26,7 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('images', function () {
-  return gulp.src(['./assets/images/*'])
+  gulp.src(['./images/*'])
     .pipe(imagemin({
       progressive: true,
       interlaced: true
@@ -36,6 +36,7 @@ gulp.task('images', function () {
 
 gulp.task('watch', function() {
   gulp.watch(['./scss/**/*.scss'], ['sass']);
+  gulp.watch(['images/*'], ['images']);
 });
 
 gulp.task('install', ['git-check'], function() {
