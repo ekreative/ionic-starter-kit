@@ -1,60 +1,60 @@
 angular.module('starter')
-    .factory('API', function ($http, $q, config) {
+    .factory('API', ($http, $q, config) => {
         return {
-            get: function (url, headers) {
+            get: (url, headers) => {
                 var deferred = $q.defer(),
                     configObj = {
                         headers: headers || {}
                     };
 
-                $http.get(config.apiServer + url, configObj).then(function (data) {
+                $http.get(config.apiServer + url, configObj).then((data) => {
                     deferred.resolve(data);
-                }, function (err) {
+                }, (err) => {
                     deferred.reject(err);
                 });
 
                 return deferred.promise;
             },
 
-            post: function (url, data, headers) {
+            post: (url, data, headers) => {
                 var deferred = $q.defer(),
                     configObj = {
-                        headers: headers || {}
+                        headers: headers
                     };
 
-                $http.post(config.apiServer + url, data, configObj).then(function (result) {
+                $http.post(config.apiServer + url, data, configObj).then((result) => {
                     deferred.resolve(result);
-                }, function (err) {
+                }, (err) => {
                     deferred.reject(err);
                 });
 
                 return deferred.promise;
             },
 
-            put: function (url, data, headers) {
+            put: (url, data, headers) => {
                 var deferred = $q.defer(),
                     configObj = {
-                        headers: headers || {}
+                        headers: headers
                     };
 
-                $http.put(config.apiServer + url, data, configObj).then(function (result) {
+                $http.put(config.apiServer + url, data, configObj).then((result) => {
                     deferred.resolve(result);
-                }, function (err) {
+                }, (err) => {
                     deferred.reject(err);
                 });
 
                 return deferred.promise;
             },
 
-            delete: function (url, headers) {
+            delete: (url, headers) => {
                 var deferred = $q.defer(),
                     configObj = {
-                        headers: headers || {}
+                        headers: headers
                     };
 
-                $http.delete(config.apiServer + url, configObj).then(function (result) {
+                $http.delete(config.apiServer + url, configObj).then((result) => {
                     deferred.resolve(result);
-                }, function (err) {
+                }, (err) => {
                     deferred.reject(err);
                 });
 
@@ -64,17 +64,17 @@ angular.module('starter')
         }
     })
 
-    .factory('Pushes', function () {
+    .factory('Pushes', () => {
         return {
-            run: function (senderID) {
+            run: (senderID) => {
                 var push = PushNotification.init({ 'android': {'senderID': senderID},
                     'ios': {'alert': 'true', 'badge': 'true', 'sound': 'true'}, 'windows': {} } );
 
-                push.on('registration', function(data) {
+                push.on('registration', (data) => {
                     // data.registrationId
                 });
 
-                push.on('notification', function(data) {
+                push.on('notification', (data) => {
                     // data.message,
                     // data.title,
                     // data.count,
@@ -83,7 +83,7 @@ angular.module('starter')
                     // data.additionalData
                 });
 
-                push.on('error', function(e) {
+                push.on('error', (e) => {
                     // e.message
                 });
             }
