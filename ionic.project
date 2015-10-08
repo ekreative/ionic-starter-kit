@@ -4,6 +4,7 @@
   "gulpStartupTasks": [
     "sass",
     "images",
+    "scripts",
     "watch"
   ],
   "watchPatterns": [
