@@ -8,3 +8,4 @@ plugins/
 resources/
 www/lib/
 www/assets/
+www/js/main/config.js
