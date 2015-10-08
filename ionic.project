@@ -14,7 +14,7 @@
     "watch"
   ],
   "watchPatterns": [
-    "www/**/*",
+    "www/assets/**/*",
     "!www/lib/**/*",
     "www/index.html"
   ]
