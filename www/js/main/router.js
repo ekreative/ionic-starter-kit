@@ -11,7 +11,7 @@ angular.module('starter')
             .state('tab', {
                 url: '/tab',
                 abstract: true,
-                templateUrl: 'modules/tabs/views/tabs.html'
+                templateUrl: 'templates/tabs/tabs.html'
             })
 
             // Each tab has its own nav history stack:
@@ -20,7 +20,7 @@ angular.module('starter')
                 url: '/dash',
                 views: {
                     'tab-dash': {
-                        templateUrl: 'modules/tabs/views/tab-dash.html',
+                        templateUrl: 'templates/tabs/tab-dash.html',
                         controller: 'DashCtrl as Dash'
                     }
                 }
@@ -30,7 +30,7 @@ angular.module('starter')
                 url: '/chats',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'modules/tabs/views/tab-chats.html',
+                        templateUrl: 'templates/tabs/tab-chats.html',
                         controller: 'ChatsCtrl as Chats'
                     }
                 }
@@ -39,7 +39,7 @@ angular.module('starter')
                 url: '/chats/:chatId',
                 views: {
                     'tab-chats': {
-                        templateUrl: 'modules/tabs/views/chat-detail.html',
+                        templateUrl: 'templates/tabs/chat-detail.html',
                         controller: 'ChatDetailCtrl as ChatDetail'
                     }
                 }
@@ -49,7 +49,7 @@ angular.module('starter')
                 url: '/account',
                 views: {
                     'tab-account': {
-                        templateUrl: 'modules/tabs/views/tab-account.html',
+                        templateUrl: 'templates/tabs/tab-account.html',
                         controller: 'AccountCtrl as Account'
                     }
                 }
