@@ -1,6 +1,6 @@
 angular.module('starter')
 
-  .factory('Chats', function () {
+  .factory('Chats', () => {
       // Might use a resource here that returns a JSON array
 
       // Some fake testing data
@@ -32,13 +32,13 @@ angular.module('starter')
       }];
 
       return {
-          all: function () {
+          all: () => {
               return chats;
           },
-          remove: function (chat) {
+          remove: (chat) => {
               chats.splice(chats.indexOf(chat), 1);
           },
-          get: function (chatId) {
+          get: (chatId) => {
               for (var i = 0; i < chats.length; i++) {
                   if (chats[i].id === parseInt(chatId)) {
                       return chats[i];
