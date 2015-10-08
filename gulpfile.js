@@ -21,13 +21,12 @@ gulp.task('sass', function(done) {
     .pipe(sass({
       errLogToConsole: true
     }))
-    .pipe(gulp.dest('./www/css/'))
     .pipe(minifyCss({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./www/css/'))
+    .pipe(gulp.dest('./www/assets/css/'))
     .on('end', done);
 });
 
@@ -37,7 +36,7 @@ gulp.task('images', function () {
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('./www/img/'));
+    .pipe(gulp.dest('./www/assets/img/'));
 });
 
 gulp.task('scripts', function() {
@@ -48,7 +47,7 @@ gulp.task('scripts', function() {
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('./www/script/'));
+    .pipe(gulp.dest('./www/assets/script/'));
 });
 
 gulp.task('watch', function() {
