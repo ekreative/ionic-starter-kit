@@ -39,14 +39,14 @@ Create a build
 
 5. Allow http requests for ios - according to [this](http://www.ekreative.com/blog/adapting-my-ionic-framework-hybrid-mobile-app-for-ios-9-problems-and-solutions) article;
 
-6. new [Push Plugin](https://github.com/phonegap/phonegap-plugin-push) service;
+6. New [Push Plugin](https://github.com/phonegap/phonegap-plugin-push) service;
 
-7. Gulp tasks with ionic’s commands: serve, build, run:
+7. There is www/js/main/config.js.dist file - copy this file in the same directory with extension ‘.js’ for correct work (this file added to .gitignore);
+
+8. Gulp tasks with ionic’s commands: serve, build, run:
 
   * imagemin ­ images now in ‘~/images’ directory, but use this directory for use imagemin files: ‘www/assets/img/’
 
   * sourcemaps for scss;
 
-  * js-files manipulations: sourcemaps, babel, ngAnnotate, concat, uglify -> so now we have only 1 js-file in index.html;
-
-8. There is www/js/main/config.js.dist file - copy this file in the same directory with extension ‘.js’ for correct work (this file added to .gitignore).
+  * js-files manipulations: sourcemaps, babel, ngAnnotate, concat, uglify -> so now we have only 1 js-file in index.html.
