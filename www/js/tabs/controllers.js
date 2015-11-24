@@ -2,18 +2,18 @@ angular.module('starter')
 
     .controller('DashCtrl', () => {})
 
-    .controller('ChatsCtrl', (Chats) => {
+    .controller('ChatsCtrl', function (Chats) {
         this.chats = Chats.all();
         this.remove = (chat) => {
             Chats.remove(chat);
         };
     })
 
-    .controller('ChatDetailCtrl', ($stateParams, Chats) => {
+    .controller('ChatDetailCtrl', function ($stateParams, Chats) {
         this.chat = Chats.get($stateParams.chatId);
     })
 
-    .controller('AccountCtrl', () => {
+    .controller('AccountCtrl', function () {
         this.settings = {
             enableFriends: true
         };
