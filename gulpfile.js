@@ -1,17 +1,18 @@
 var gulp       = require('gulp'),
-    gutil      = require('gulp-util'),
     bower      = require('bower'),
     concat     = require('gulp-concat'),
     sass       = require('gulp-sass'),
-    minifyCss  = require('gulp-minify-css'),
+    minifyCss  = require('gulp-cssnano'),
     imagemin   = require('gulp-imagemin'),
     rename     = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
     babel      = require('gulp-babel'),
     ngAnnotate = require('gulp-ng-annotate'),
-    uglify     = require('gulp-uglify'),
-    sh         = require('shelljs');
+    uglify     = require('gulp-uglify');
 
+var paths = {
+    js: ['www/js/*.js', 'www/js/**/*.js']
+};
 
 gulp.task('default', ['sass', 'images', 'scripts']);
 
@@ -40,7 +41,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['www/js/*.js', 'www/js/**/*.js'])
+  return gulp.src(paths.js)
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(ngAnnotate())
@@ -53,25 +54,5 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
   gulp.watch(['./scss/**/*.scss'], ['sass']);
   gulp.watch(['images/*'], ['images']);
-  gulp.watch(['www/js/*.js', 'www/js/**/*.js'], ['scripts']);
-});
-
-gulp.task('install', ['git-check'], function() {
-  return bower.commands.install()
-    .on('log', function(data) {
-      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-    });
-});
-
-gulp.task('git-check', function(done) {
-  if (!sh.which('git')) {
-    console.log(
-      '  ' + gutil.colors.red('Git is not installed.'),
-      '\n  Git, the version control system, is required to download Ionic.',
-      '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
-      '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
-    );
-    process.exit(1);
-  }
-  done();
+  gulp.watch(paths.js, ['scripts']);
 });
