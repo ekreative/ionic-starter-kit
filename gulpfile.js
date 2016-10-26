@@ -1,21 +1,18 @@
-var gulp       = require('gulp'),
-    concat     = require('gulp-concat'),
-    sass       = require('gulp-sass'),
-    minifyCss  = require('gulp-cssnano'),
-    imagemin   = require('gulp-imagemin'),
-    rename     = require('gulp-rename'),
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    sass = require('gulp-sass'),
+    minifyCss = require('gulp-minify-css'),
+    rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
-    babel      = require('gulp-babel'),
+    babel = require('gulp-babel'),
     ngAnnotate = require('gulp-ng-annotate'),
-    uglify     = require('gulp-uglify');
+    uglify = require('gulp-uglify');
 
-var paths = {
-    js: ['www/js/*.js', 'www/js/**/*.js']
-};
+gulp.task('default', ['sass', 'scripts']);
 
-gulp.task('default', ['sass', 'images', 'scripts']);
+gulp.task('serve:before', ['watch']);
 
-gulp.task('sass', function(done) {
+gulp.task('sass', function (done) {
     gulp.src('./scss/ionic.app.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
@@ -24,27 +21,16 @@ gulp.task('sass', function(done) {
         .pipe(minifyCss({
             keepSpecialComments: 0
         }))
-        .pipe(rename({
-            extname: '.min.css'
-        }))
+        .pipe(rename({extname: '.min.css'}))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./www/assets/css/'))
         .on('end', done);
 });
 
-gulp.task('images', function() {
-    gulp.src(['./images/*'])
-        .pipe(imagemin({
-            progressive: true,
-            interlaced: true
-        }))
-        .pipe(gulp.dest('./www/assets/img/'));
-});
-
-gulp.task('scripts', function() {
-    gulp.src(paths.js)
+gulp.task('scripts', function () {
+    return gulp.src(['www/js/*.js', 'www/js/**/*.js'])
         .pipe(sourcemaps.init())
-        .pipe(babel())
+        .pipe(babel({presets: ['es2015']}))
         .pipe(ngAnnotate())
         .pipe(concat('main.min.js'))
         .pipe(uglify())
@@ -52,8 +38,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('./www/assets/script/'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['default'], function () {
     gulp.watch(['./scss/**/*.scss'], ['sass']);
-    gulp.watch(['images/*'], ['images']);
-    gulp.watch(paths.js.main, ['scripts']);
+    gulp.watch(['www/js/*.js', 'www/js/**/*.js'], ['scripts']);
 });

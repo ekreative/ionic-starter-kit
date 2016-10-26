@@ -1,16 +1,8 @@
 {
   "name": "ionicKit",
   "app_id": "",
-  "gulpDependentTasks": [
-    "sass",
-    "images",
-    "scripts",
-    "watch"
-  ],
   "gulpStartupTasks": [
-    "sass",
-    "images",
-    "scripts",
+    "dafault",
     "watch"
   ],
   "watchPatterns": [
