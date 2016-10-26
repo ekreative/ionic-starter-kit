@@ -1,20 +1,31 @@
 angular.module('starter')
 
-    .controller('DashCtrl', () => {})
+    .controller('DashCtrl', function () {
+        'ngInject';
+    })
 
     .controller('ChatsCtrl', function (Chats) {
-        this.chats = Chats.all();
-        this.remove = (chat) => {
+        'ngInject';
+        let vm = this; // view model
+
+        vm.chats = Chats.all();
+        vm.remove = (chat) => {
             Chats.remove(chat);
         };
     })
 
     .controller('ChatDetailCtrl', function ($stateParams, Chats) {
-        this.chat = Chats.get($stateParams.chatId);
+        'ngInject';
+        let vm = this;
+
+        vm.chat = Chats.get($stateParams.chatId);
     })
 
     .controller('AccountCtrl', function () {
-        this.settings = {
+        'ngInject';
+        let vm = this;
+
+        vm.settings = {
             enableFriends: true
         };
     });

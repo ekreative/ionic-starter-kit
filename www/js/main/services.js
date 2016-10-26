@@ -1,8 +1,10 @@
 angular.module('starter')
     .factory('API', ($http, $q, config) => {
+        'ngInject';
+
         return {
             get: (url, headers) => {
-                var deferred = $q.defer(),
+                let deferred = $q.defer(),
                     configObj = {
                         headers: headers || {}
                     };
@@ -17,7 +19,7 @@ angular.module('starter')
             },
 
             post: (url, data, headers) => {
-                var deferred = $q.defer(),
+                let deferred = $q.defer(),
                     configObj = {
                         headers: headers
                     };
@@ -32,7 +34,7 @@ angular.module('starter')
             },
 
             put: (url, data, headers) => {
-                var deferred = $q.defer(),
+                let deferred = $q.defer(),
                     configObj = {
                         headers: headers
                     };
@@ -47,7 +49,7 @@ angular.module('starter')
             },
 
             delete: (url, headers) => {
-                var deferred = $q.defer(),
+                let deferred = $q.defer(),
                     configObj = {
                         headers: headers
                     };
@@ -61,31 +63,5 @@ angular.module('starter')
                 return deferred.promise;
             }
 
-        }
-    })
-
-    .factory('Pushes', () => {
-        return {
-            run: (senderID) => {
-                var push = PushNotification.init({ 'android': {'senderID': senderID},
-                    'ios': {'alert': 'true', 'badge': 'true', 'sound': 'true'}, 'windows': {} } );
-
-                push.on('registration', (data) => {
-                    // data.registrationId
-                });
-
-                push.on('notification', (data) => {
-                    // data.message,
-                    // data.title,
-                    // data.count,
-                    // data.sound,
-                    // data.image,
-                    // data.additionalData
-                });
-
-                push.on('error', (e) => {
-                    // e.message
-                });
-            }
         }
     });

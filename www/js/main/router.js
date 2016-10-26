@@ -1,5 +1,6 @@
 angular.module('starter')
     .config(($stateProvider, $urlRouterProvider) => {
+        'ngInject';
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -7,7 +8,7 @@ angular.module('starter')
         // Each state's controller can be found in controllers.js
         $stateProvider
 
-            // setup an abstract state for the tabs directive
+        // setup an abstract state for the tabs directive
             .state('tab', {
                 url: '/tab',
                 abstract: true,
@@ -59,7 +60,7 @@ angular.module('starter')
         $urlRouterProvider.otherwise('/tab/dash');
         //$urlRouterProvider.otherwise(function ($injector) {
         //    return $injector.get('serviceName').methodOrVariable() ? '/tab/dash' : '/tab/account';
-        //this will not work, this is an example
+        //this will not work right now, this is an example
         //});
 
     });

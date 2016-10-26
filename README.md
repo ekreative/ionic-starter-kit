@@ -1,16 +1,5 @@
 # IonicKit from eKreative
 
-## You will need
-
-* node/npm
-* cordova
-* [ionic](http://ionicframework.com/)
-
-Install node, npm then
-
-    npm install -g cordova ionic bower
-    npm install
-
 ## Get started
 
 Run a dev server
@@ -37,13 +26,9 @@ Emulating in real time
 
 3. Another file system: modules;
 
-3. New [Push Plugin](https://github.com/phonegap/phonegap-plugin-push) service;
-
 4. There is www/js/main/config.js.dist file - copy this file in the same directory with extension ‘.js’ for correct work (this file added to .gitignore);
 
 5. Gulp tasks with ionic’s commands: serve, build, run:
-
-  * imagemin ­ images now in ‘~/images’ directory, but this directory is for using imagemin files in your html/css/js files: ‘www/assets/img/’
 
   * sourcemaps for scss and js files;
 
