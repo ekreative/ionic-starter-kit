@@ -17,17 +17,6 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0"
   },
-  "cordovaPlugins": [
-    "ionic-plugin-keyboard",
-    "cordova-plugin-console",
-    "cordova-plugin-device",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-whitelist"
-  ],
-  "cordovaPlatforms": [
-    "ios",
-    "android"
-  ],
   "cleanFromPlatforms": [
     "js/"
   ]
