@@ -15,9 +15,20 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "standard": "^10.0.1"
   },
   "cleanFromPlatforms": [
     "js/"
-  ]
+  ],
+  "scripts": {
+    "postinstall": "bower install && gulp",
+    "serve": "ionic serve",
+    "test": "standard",
+    "build_ios": "ionic platform add ios && ionic build ios",
+    "build_android": "ionic platform add android && ionic build android"
+  },
+  "repository": "git@github.com:ekreative/ionic-starter-kit.git",
+  "author": "Light <kirill.gusyatin@ekreative.com>",
+  "license": "MIT"
 }

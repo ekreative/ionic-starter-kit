@@ -1,15 +1,23 @@
 # IonicKit from eKreative
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Get started
+
+Setup (required Node 4.x)
+
+    cp www/js/main/config.<dev or release>.js.dist www/js/main/config.js
+
+    yarn
 
 Run a dev server
 
-    ionic serve
+    yarn serve
 
 Run on a device
 
     ionic run <platform>
-    
+
 Create a build
 
     ionic build <platform>
@@ -17,6 +25,10 @@ Create a build
 Emulating in real time
 
     ionic emulate <platform> -l -c -s
+
+Tests
+
+    yarn test
 
 ## This ionicKit includes:
 

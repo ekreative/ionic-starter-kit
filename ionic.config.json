@@ -1,13 +1,4 @@
 {
   "name": "ionicKit",
-  "app_id": "",
-  "gulpStartupTasks": [
-    "dafault",
-    "watch"
-  ],
-  "watchPatterns": [
-    "www/assets/**/*",
-    "www/templates/**/*",
-    "www/index.html"
-  ]
+  "app_id": ""
 }
