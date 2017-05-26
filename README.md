@@ -10,8 +10,6 @@ Setup (required Node 4.x)
 
     yarn
 
-    yarn postinstall
-
 Add a platform
 
     ionic platform add <platform>
