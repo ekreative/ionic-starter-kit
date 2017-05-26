@@ -14,11 +14,11 @@ Setup (required Node 4.x)
 
 Add a platform
 
-   ionic platform add <platform>
+    ionic platform add <platform>
 
 Run on a device
 
-   ionic run <platform>
+    ionic run <platform>
 
 Run a dev server
 
