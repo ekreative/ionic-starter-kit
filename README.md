@@ -10,13 +10,19 @@ Setup (required Node 4.x)
 
     yarn
 
-Run a dev server
+    yarn postinstall
 
-    yarn serve
+Add a platform
+
+   ionic platform add <platform>
 
 Run on a device
 
-    ionic run <platform>
+   ionic run <platform>
+
+Run a dev server
+
+    yarn serve
 
 Create a build
 
